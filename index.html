@@ -3,173 +3,568 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tatie de la Tech - Accompagnement Tech PSH</title>
+    <title>Tatie de la Tech - L'accompagnement PSH qui vous ressemble</title>
     <style>
+        :root {
+            --primary: #7b1fa2;
+            --secondary: #ba68c8;
+            --accent-rose: #d81b60;
+            --accent-orange: #ff7043;
+            --accent-yellow: #f4d35e;
+            --accent-green: #66bb6a;
+            --accent-green-light: #81c784;
+            --text: #1a1a1a;
+            --bg: #ffffff;
+            --gradient-main: linear-gradient(135deg, #7b1fa2, #d81b60);
+            --gradient-soft: linear-gradient(135deg, #ba68c8, #66bb6a);
+            --gradient-warm: linear-gradient(135deg, #f4d35e, #ff7043);
+            --gradient-friendly: linear-gradient(135deg, #f4d35e, #ba68c8);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: Verdana, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--text);
+            background: var(--bg);
+        }
+        
+        /* Header */
+        .header {
+            background: var(--gradient-main);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .header-content {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
-        header {
-            background: rgba(255, 255, 255, 0.95);
-            color: #333;
-            text-align: center;
-            padding: 3rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-        .hero {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2.5rem;
-            border-radius: 20px;
-            margin-bottom: 2rem;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            backdrop-filter: blur(10px);
-        }
-        .stats {
+            padding: 0 2rem;
             display: flex;
-            justify-content: space-around;
+            align-items: center;
+            justify-content: space-between;
             flex-wrap: wrap;
-            margin: 2rem 0;
         }
-        .stat-box {
-            background: linear-gradient(135deg, #11998e, #38ef7d);
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-friendly);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+        }
+        
+        .logo-text {
             color: white;
-            padding: 1.5rem;
-            border-radius: 15px;
-            text-align: center;
-            margin: 0.5rem;
-            min-width: 200px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-            transform: translateY(0);
-            transition: transform 0.3s ease;
-        }
-        .stat-box:hover {
-            transform: translateY(-5px);
-        }
-        .stat-number {
-            font-size: 2.5rem;
+            font-size: 24px;
             font-weight: bold;
-            margin-bottom: 0.5rem;
         }
-        .cta-button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 15px 30px;
+        
+        .help-button {
+            background: var(--accent-yellow);
+            color: var(--text);
+            padding: 12px 24px;
             border: none;
-            border-radius: 50px;
-            font-size: 1.2rem;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: bold;
             cursor: pointer;
-            margin: 1rem;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
             transition: all 0.3s ease;
+            min-height: 50px;
         }
-        .cta-button:hover {
+        
+        .help-button:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            box-shadow: 0 4px 15px rgba(244, 211, 94, 0.4);
         }
-        .mission-section {
-            background: rgba(255, 255, 255, 0.95);
-            padding: 2rem;
-            border-radius: 20px;
-            margin: 2rem 0;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        
+        /* Navigation */
+        .nav {
+            background: white;
+            padding: 1rem 0;
+            border-bottom: 3px solid var(--accent-yellow);
         }
-        .emoji {
-            font-size: 2rem;
-            margin-right: 1rem;
+        
+        .nav-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
         }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            flex-wrap: wrap;
+        }
+        
+        .nav-item a {
+            color: var(--primary);
+            text-decoration: none;
+            font-size: 18px;
+            font-weight: bold;
+            padding: 12px 20px;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            display: block;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .nav-item a:hover {
+            background: var(--gradient-soft);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: var(--gradient-main);
+            color: white;
+            padding: 4rem 0;
+            text-align: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .hero h1 {
+            font-size: 36px;
+            margin-bottom: 1.5rem;
+            font-weight: bold;
+        }
+        
+        .hero p {
+            font-size: 20px;
+            margin-bottom: 2rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+        
+        .btn {
+            padding: 16px 32px;
+            border: none;
+            border-radius: 12px;
+            font-size: 18px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+            min-height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-warm);
+            color: var(--text);
+        }
+        
+        .btn-secondary {
+            background: var(--gradient-soft);
+            color: white;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+        
+        /* Features Section */
         .features {
+            padding: 4rem 0;
+            background: #f8f9fa;
+        }
+        
+        .features-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .features h2 {
+            text-align: center;
+            color: var(--primary);
+            font-size: 32px;
+            margin-bottom: 3rem;
+        }
+        
+        .features-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 2rem;
-            margin: 2rem 0;
         }
+        
         .feature-card {
-            background: rgba(255, 255, 255, 0.95);
+            background: white;
             padding: 2rem;
-            border-radius: 15px;
+            border-radius: 16px;
             text-align: center;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            transition: all 0.3s ease;
+            border-top: 4px solid var(--accent-green);
         }
+        
         .feature-card:hover {
             transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+        
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card h3 {
+            color: var(--primary);
+            font-size: 22px;
+            margin-bottom: 1rem;
+        }
+        
+        .feature-card p {
+            font-size: 16px;
+            line-height: 1.6;
+        }
+        
+        /* Stats Section */
+        .stats {
+            background: var(--gradient-main);
+            color: white;
+            padding: 3rem 0;
+        }
+        
+        .stats-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+            text-align: center;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .stat-item {
+            padding: 1.5rem;
+        }
+        
+        .stat-number {
+            font-size: 48px;
+            font-weight: bold;
+            color: var(--accent-yellow);
+            display: block;
+        }
+        
+        .stat-label {
+            font-size: 18px;
+            margin-top: 0.5rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            background: var(--accent-yellow);
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .contact-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        .contact h2 {
+            color: var(--text);
+            font-size: 28px;
+            margin-bottom: 1.5rem;
+        }
+        
+        .contact p {
+            font-size: 18px;
+            margin-bottom: 2rem;
+            color: var(--text);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 16px;
+            color: var(--text);
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--primary);
+            color: white;
+            padding: 2rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 18px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .nav-menu {
+                flex-direction: column;
+                gap: 0.5rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+        
+        /* Accessibility improvements */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus styles for better accessibility */
+        button:focus,
+        a:focus {
+            outline: 3px solid var(--accent-yellow);
+            outline-offset: 2px;
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1><span class="emoji">👩‍💻</span>Tatie de la Tech</h1>
-        <h2>Votre accompagnatrice bienveillante vers l'emploi tech</h2>
-        <p>Parce que chaque parcours mérite une attention particulière</p>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <div class="logo">
+                <div class="logo-icon">💜</div>
+                <div class="logo-text">Tatie de la Tech</div>
+            </div>
+            <button class="help-button" onclick="scrollToContact()">
+                🤗 Aide rapide
+            </button>
+        </div>
     </header>
 
-    <div class="hero">
-        <h2><span class="emoji">🌟</span>Une approche révolutionnaire et humaine</h2>
-        <p>Tatie de la Tech combine l'intelligence artificielle et la bienveillance humaine pour accompagner les personnes en situation de handicap vers les métiers du numérique.</p>
-        
-        <div class="stats">
-            <div class="stat-box">
-                <div class="stat-number">65%</div>
-                <div>Taux d'insertion réussi</div>
-                <div>(vs 38% national)</div>
+    <!-- Navigation -->
+    <nav class="nav">
+        <div class="nav-content">
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="#accueil">🏠 Accueil</a></li>
+                <li class="nav-item"><a href="#parcours">💜 Mon parcours</a></li>
+                <li class="nav-item"><a href="#apprendre">📚 Apprendre</a></li>
+                <li class="nav-item"><a href="#emploi">🤝 Trouver un emploi</a></li>
+                <li class="nav-item"><a href="#contact">🤗 Contact</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="accueil">
+        <div class="hero-content">
+            <h1>L'accompagnement qui vous ressemble</h1>
+            <p>Trouvez un emploi dans la tech. Financement CPF ou prise en charge spécialisée.</p>
+            <div class="cta-buttons">
+                <a href="#parcours" class="btn btn-primary">✨ Commencer mon parcours</a>
+                <a href="#contact" class="btn btn-secondary">💬 Discuter avec l'équipe</a>
             </div>
-            <div class="stat-box">
-                <div class="stat-number">487K</div>
-                <div>PSH cherchent un emploi</div>
-                <div>Notre mission</div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="parcours">
+        <div class="features-content">
+            <h2>Comment Tatie de la Tech vous aide</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🎯</div>
+                    <h3>Parcours personnalisé</h3>
+                    <p>Votre formation s'adapte à vous. À votre rythme. Selon vos besoins.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">♿</div>
+                    <h3>100% accessible</h3>
+                    <p>Texte simple. Interface claire. Conçu pour tous les handicaps.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">👥</div>
+                    <h3>Aide humaine</h3>
+                    <p>L'équipe vous accompagne. Des vraies personnes. Toujours disponibles.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💼</div>
+                    <h3>Emploi garanti</h3>
+                    <p>Des entreprises partenaires. Qui cherchent vos compétences.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Métiers tech</h3>
+                    <p>Développement web. Design. Marketing digital. L'avenir vous attend.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌟</div>
+                    <h3>Réussite prouvée</h3>
+                    <p>65% de nos apprenants trouvent un emploi. C'est notre fierté.</p>
+                </div>
             </div>
-            <div class="stat-box">
-                <div class="stat-number">100%</div>
-                <div>Accompagnement personnalisé</div>
-                <div>Comme une vraie Tatie</div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats">
+        <div class="stats-content">
+            <h2>Nos résultats en chiffres</h2>
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <span class="stat-number">65%</span>
+                    <span class="stat-label">Taux d'insertion</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">45</span>
+                    <span class="stat-label">PSH accompagnées</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Accessibilité FALC</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">6</span>
+                    <span class="stat-label">Mois de formation</span>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div style="text-align: center;">
-            <button class="cta-button" onclick="alert('Diagnostic en cours de développement ! 🚧')">🎯 Commencer mon diagnostic</button>
-            <button class="cta-button" onclick="alert('Espace entreprises bientôt disponible ! 🏢')">🏢 Espace Entreprises</button>
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Parlons de votre projet</h2>
+            <p>L'équipe vous répond rapidement. Pour répondre à vos questions.</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span>📧</span>
+                    <span>tatiedelatech@gmail.com</span>
+                </div>
+                <div class="contact-item">
+                    <span>📱</span>
+                    <span>06 12 49 78 45</span>
+                </div>
+                <div class="contact-item">
+                    <span>📍</span>
+                    <span>Toulouse</span>
+                </div>
+            </div>
+            <a href="mailto:tatiedelatech@gmail.com" class="btn btn-primary">✉️ Contacter l'équipe</a>
         </div>
-    </div>
+    </section>
 
-    <div class="features">
-        <div class="feature-card">
-            <h3><span class="emoji">🧠</span>IA Personnalisée</h3>
-            <p>Notre intelligence artificielle s'adapte à votre profil unique et à votre type de handicap pour un accompagnement sur-mesure.</p>
-        </div>
-        <div class="feature-card">
-            <h3><span class="emoji">🎓</span>Formation Adaptée</h3>
-            <p>Parcours de formation flexible avec support multi-modal : vocal, visuel, textuel selon vos besoins.</p>
-        </div>
-        <div class="feature-card">
-            <h3><span class="emoji">🤝</span>Matching Entreprises</h3>
-            <p>Mise en relation intelligente avec des entreprises inclusives qui valorisent la diversité.</p>
-        </div>
-    </div>
-
-    <div class="mission-section">
-        <h3><span class="emoji">💝</span>Pourquoi "Tatie" ?</h3>
-        <p>Parce que l'insertion professionnelle a besoin de :</p>
-        <ul>
-            <li><strong>🤗 Bienveillance</strong> : Comme une tatie qui croit en vous</li>
-            <li><strong>🎯 Expertise</strong> : Des compétences tech pointues</li>
-            <li><strong>✨ Personnalisation</strong> : Chaque parcours est unique</li>
-            <li><strong>🚀 Accompagnement</strong> : On ne vous lâche pas !</li>
-        </ul>
-    </div>
-
-    <footer style="text-align: center; margin-top: 2rem; color: white;">
-        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px;">
-            <p><span class="emoji">✨</span>Plateforme en développement - MVP 2025</p>
-            <p>Contact : solenne.davesne@gmail.com</p>
-            <p><a href="https://github.com/TatiedelaTech" style="color: white; text-decoration: none;">🔗 GitHub</a></p>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>💜 Tatie de la Tech - L'inclusion, c'est notre métier</p>
+            <p>2025 - Toulouse, France</p>
         </div>
     </footer>
+
+    <script>
+        function scrollToContact() {
+            document.getElementById('contact').scrollIntoView({ 
+                behavior: 'smooth' 
+            });
+        }
+
+        // Smooth scrolling for all anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add keyboard navigation improvements
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Tab') {
+                document.body.classList.add('keyboard-nav');
+            }
+        });
+
+        document.addEventListener('mousedown', function() {
+            document.body.classList.remove('keyboard-nav');
+        });
+    </script>
 </body>
 </html>
