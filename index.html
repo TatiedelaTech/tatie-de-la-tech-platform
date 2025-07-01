@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tatie de la Tech - Accompagnement Tech PSH</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            color: #333;
+            text-align: center;
+            padding: 3rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .hero {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2.5rem;
+            border-radius: 20px;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+            backdrop-filter: blur(10px);
+        }
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin: 2rem 0;
+        }
+        .stat-box {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 1.5rem;
+            border-radius: 15px;
+            text-align: center;
+            margin: 0.5rem;
+            min-width: 200px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transform: translateY(0);
+            transition: transform 0.3s ease;
+        }
+        .stat-box:hover {
+            transform: translateY(-5px);
+        }
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 0.5rem;
+        }
+        .cta-button {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 1rem;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            transition: all 0.3s ease;
+        }
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+        }
+        .mission-section {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 20px;
+            margin: 2rem 0;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+        }
+        .emoji {
+            font-size: 2rem;
+            margin-right: 1rem;
+        }
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        .feature-card {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1><span class="emoji">👩‍💻</span>Tatie de la Tech</h1>
+        <h2>Votre accompagnatrice bienveillante vers l'emploi tech</h2>
+        <p>Parce que chaque parcours mérite une attention particulière</p>
+    </header>
+
+    <div class="hero">
+        <h2><span class="emoji">🌟</span>Une approche révolutionnaire et humaine</h2>
+        <p>Tatie de la Tech combine l'intelligence artificielle et la bienveillance humaine pour accompagner les personnes en situation de handicap vers les métiers du numérique.</p>
+        
+        <div class="stats">
+            <div class="stat-box">
+                <div class="stat-number">65%</div>
+                <div>Taux d'insertion réussi</div>
+                <div>(vs 38% national)</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">487K</div>
+                <div>PSH cherchent un emploi</div>
+                <div>Notre mission</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-number">100%</div>
+                <div>Accompagnement personnalisé</div>
+                <div>Comme une vraie Tatie</div>
+            </div>
+        </div>
+
+        <div style="text-align: center;">
+            <button class="cta-button" onclick="alert('Diagnostic en cours de développement ! 🚧')">🎯 Commencer mon diagnostic</button>
+            <button class="cta-button" onclick="alert('Espace entreprises bientôt disponible ! 🏢')">🏢 Espace Entreprises</button>
+        </div>
+    </div>
+
+    <div class="features">
+        <div class="feature-card">
+            <h3><span class="emoji">🧠</span>IA Personnalisée</h3>
+            <p>Notre intelligence artificielle s'adapte à votre profil unique et à votre type de handicap pour un accompagnement sur-mesure.</p>
+        </div>
+        <div class="feature-card">
+            <h3><span class="emoji">🎓</span>Formation Adaptée</h3>
+            <p>Parcours de formation flexible avec support multi-modal : vocal, visuel, textuel selon vos besoins.</p>
+        </div>
+        <div class="feature-card">
+            <h3><span class="emoji">🤝</span>Matching Entreprises</h3>
+            <p>Mise en relation intelligente avec des entreprises inclusives qui valorisent la diversité.</p>
+        </div>
+    </div>
+
+    <div class="mission-section">
+        <h3><span class="emoji">💝</span>Pourquoi "Tatie" ?</h3>
+        <p>Parce que l'insertion professionnelle a besoin de :</p>
+        <ul>
+            <li><strong>🤗 Bienveillance</strong> : Comme une tatie qui croit en vous</li>
+            <li><strong>🎯 Expertise</strong> : Des compétences tech pointues</li>
+            <li><strong>✨ Personnalisation</strong> : Chaque parcours est unique</li>
+            <li><strong>🚀 Accompagnement</strong> : On ne vous lâche pas !</li>
+        </ul>
+    </div>
+
+    <footer style="text-align: center; margin-top: 2rem; color: white;">
+        <div style="background: rgba(255,255,255,0.1); padding: 1rem; border-radius: 10px;">
+            <p><span class="emoji">✨</span>Plateforme en développement - MVP 2025</p>
+            <p>Contact : solenne.davesne@gmail.com</p>
+            <p><a href="https://github.com/TatiedelaTech" style="color: white; text-decoration: none;">🔗 GitHub</a></p>
+        </div>
+    </footer>
+</body>
+</html>
